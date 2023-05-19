@@ -29,10 +29,8 @@ class TelegramBotUpdatesListenerTest {
 
     @Mock
     private TelegramBot telegramBot;
-
     @Mock
     private NotificationTaskService notificationTaskService;
-
     @InjectMocks
     private TelegramBotUpdatesListener telegramBotUpdatesListener;
 
@@ -57,8 +55,8 @@ class TelegramBotUpdatesListenerTest {
         assertThat(actual.getParameters().get("chat_id")).isEqualTo(update.message().chat().id());
         assertThat(actual.getParameters().get("text")).isEqualTo("""
                 Привет!
-                        Я могу тебе помочь запланировать задачу.
-                        Отправь её в формате: 18.05.2023 12:00 Подготовиться к совещанию
+                Я могу тебе помочь запланировать задачу.
+                Отправь её в формате: 18.05.2023 12:00 Подготовиться к совещанию
                 """);
     }
 }
